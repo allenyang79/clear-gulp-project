@@ -95,6 +95,7 @@ gulp.task('coffee',function(){
     ])
     .pipe($.changed('.tmp/scripts',{extension:".js"}))
     .pipe($.coffee())
+    .on('error',gutil.log)
     .pipe(gulp.dest('.tmp/scripts'))
 });
 //compass
@@ -111,6 +112,7 @@ gulp.task('compass',function(){
     ])
     .pipe($.changed('.tmp/styles',{extension:".css"}))
     .pipe($.compass(compassConfig))
+    .on('error',gutil.log)
     .pipe(gulp.dest('.tmp/styles'));
 });
 //jade
@@ -123,6 +125,7 @@ gulp.task('jade',function(){
     ])
     .pipe($.changed('.tmp',{extension:".jade"}))
     .pipe($.jade(jadeConfig))
+    .on('error',gutil.log)
     .pipe(gulp.dest('.tmp'));
 });
 
