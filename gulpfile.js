@@ -121,7 +121,7 @@ gulp.task('jade',function(){
         pretty:true
     }
     gulp.src([
-        'app/jade/{*/}*.jade',
+        'app/jade/{,*/}*.jade',
     ])
     .pipe($.changed('.tmp',{extension:".jade"}))
     .pipe($.jade(jadeConfig))
